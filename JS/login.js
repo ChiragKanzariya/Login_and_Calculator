@@ -58,3 +58,26 @@ function mul(){
         alert("Multiplication is: "+ mul); 
     }
 }
+
+function filter(x){
+    x.style.filter="grayscale(0)";
+    x.style.transform="scale(1.1)";
+}
+
+function filterremove(x){
+    x.style.filter="grayscale(100%)";
+    x.style.transform="scale(1)";
+}
+function zoom(x){
+    console.log(x.src);
+    var fullPath = x.src;
+    var filename = fullPath.replace(/^.*[\\\/]/, '');
+    console.log(filename);
+    let n = filename.lastIndexOf('.');
+    let newfilename = filename.substring(0,n) + 'x' + filename.substring(n);
+    newfilename = "../IMAGES/" + newfilename;
+    document.getElementById("photo").src = newfilename;
+    document.getElementById('z').style.display = 'inline';
+    document.getElementById('gallery').style.display = 'block';
+}
+
